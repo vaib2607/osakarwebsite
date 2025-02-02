@@ -1,0 +1,295 @@
+/* General Styles */
+html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Montserrat', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333;
+    background: #fff;
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Header */
+  header {
+    background: #ffffff;
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* Logo */
+  .logo {
+    height: 50px;
+    width: auto;
+    transition: height 0.3s ease;
+  }
+  
+  /* Navigation */
+  nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    margin: 0;
+  }
+  
+  nav ul li {
+    margin: 0 15px;
+  }
+  
+  nav ul li a {
+    color: #333333;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+  
+  nav ul li a:hover {
+    color: #ff6f20;
+  }
+  
+  /* Hero Section */
+  #hero {
+    background: linear-gradient(135deg, #ff6f20, #ff9a00);
+    color: #fff;
+    padding: 100px 0;
+    text-align: center;
+  }
+  
+  #hero h2 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    letter-spacing: -0.03em;
+  }
+  
+  #hero p {
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-bottom: 30px;
+  }
+  
+  #hero .btn {
+    background: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: background 0.3s ease;
+  }
+  
+  #hero .btn:hover {
+    background: #ff6f20;
+  }
+  
+  /* Sections */
+  .section {
+    padding: 80px 0;
+  }
+  
+  .section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: #333333;
+    letter-spacing: -0.02em;
+  }
+  
+  /* Vision & Mission */
+  .vision-mission-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  
+  .vision, .mission {
+    background: #f4f4f4;
+    padding: 20px;
+    border-radius: 10px;
+    width: 48%;
+    text-align: center;
+  }
+  
+  .vision h3, .mission h3 {
+    font-weight: 700;
+    color: #ff6f20;
+  }
+  
+  /* Products Grid */
+  .product-grid, .features-grid {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .product, .feature {
+    background: #fff;
+    padding: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    width: 30%;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .product:hover, .feature:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .product h3, .feature h3 {
+    font-weight: 700;
+    color: #ff6f20;
+  }
+  
+  /* Contact Form */
+  .contact-form-wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .modern-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .modern-form label {
+    font-weight: 500;
+    color: #374151;
+    font-size: 0.95rem;
+  }
+  
+  .modern-form input,
+  .modern-form textarea {
+    padding: 0.75rem 1rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.2s ease;
+    background: #f9fafb;
+  }
+  
+  .modern-form input:focus,
+  .modern-form textarea:focus {
+    outline: none;
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+    background: #ffffff;
+  }
+  
+  .modern-form input::placeholder,
+  .modern-form textarea::placeholder {
+    color: #9ca3af;
+  }
+  
+  .submit-btn {
+    background-color: #4f46e5;
+    color: white;
+    padding: 0.875rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    margin-top: 0.5rem;
+  }
+  
+  .submit-btn:hover {
+    background-color: #4338ca;
+  }
+  
+  .submit-btn:active {
+    transform: translateY(1px);
+  }
+  
+  /* Footer */
+  footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .logo {
+      height: 40px;
+    }
+  
+    nav ul {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    nav ul li {
+      margin: 10px 0;
+    }
+  
+    .product, .feature, .vision, .mission {
+      width: 100%;
+    }
+  
+    .section {
+      padding: 40px 0;
+    }
+  
+    .section h2 {
+      font-size: 2rem;
+    }
+  
+    form {
+      padding: 0 10px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .logo {
+      height: 30px;
+    }
+  
+    #hero h2 {
+      font-size: 2rem;
+    }
+  
+    .section h2 {
+      font-size: 1.8rem;
+    }
+  
+    .product h3, .feature h3 {
+      font-size: 1.2rem;
+    }
+  
+    .product p, .feature p {
+      font-size: 0.9rem;
+    }
+  }
