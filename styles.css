@@ -21,7 +21,7 @@ html {
   /* Header */
   header {
     background: #ffffff;
-    padding: 10px 0;
+    padding: 15px 0;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -35,7 +35,8 @@ html {
   
   /* Logo */
   .logo {
-    height: 50px;
+    height: 60px;
+    max-width: 535px;
     width: auto;
     transition: height 0.3s ease;
   }
@@ -49,19 +50,21 @@ html {
   }
   
   nav ul li {
-    margin: 0 15px;
+    margin: 0 12px;
   }
   
   nav ul li a {
     color: #333333;
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 550;
     transition: color 0.3s ease;
+    font-size: 15px;
   }
   
   nav ul li a:hover {
     color: #ff6f20;
   }
+  
   
   /* Hero Section */
   #hero {
@@ -70,16 +73,29 @@ html {
     padding: 100px 0;
     text-align: center;
   }
+  #hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                url('Assets/hero.png') center/cover no-repeat;
+    color: #fff;
+    padding: 80px 0;
+    text-align: center;
+    position: relative;
+  }
   
-  #hero h2 {
-    font-size: 3rem;
-    font-weight: 800;
+  #hero .container {
+    position: relative;
+    z-index: 2;
+  }
+  
+  #hero h1 {
+    font-size: 4rem;
+    font-weight: 750;
     margin-bottom: 20px;
     letter-spacing: -0.03em;
   }
   
   #hero p {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font-weight: 400;
     margin-bottom: 30px;
   }
@@ -97,52 +113,152 @@ html {
   #hero .btn:hover {
     background: #ff6f20;
   }
+  /* Vision & Mission Containers */
+.vision-container, .mission-container {
+    background: #fff;
+    border-radius: 0px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    width: 50%;
+  }
   
+  .vision h3, .mission h3 {
+    color: #ff6f20;
+    border-bottom: 2px solid #ff6f20;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .vision-mission-grid {
+    background-color: #FF6F20;
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+  }
   /* Sections */
   .section {
-    padding: 80px 0;
+    padding: 30px 0;
   }
   
   .section h2 {
     text-align: center;
     font-size: 2.5rem;
     font-weight: 700;
-    margin-bottom: 40px;
+    margin-bottom: 25px;
     color: #333333;
     letter-spacing: -0.02em;
   }
   
-  /* Vision & Mission */
-  .vision-mission-grid {
+  /* Product Carousel */
+  .product-carousel {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  .product-item {
     display: flex;
     justify-content: space-between;
-    gap: 20px;
-  }
-  
-  .vision, .mission {
-    background: #f4f4f4;
-    padding: 20px;
+    align-items: center;
+    background: white;
     border-radius: 10px;
-    width: 48%;
-    text-align: center;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   
-  .vision h3, .mission h3 {
+  .product-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .product-content {
+    width: 60%;
+  }
+  
+  .product-content h3 {
+    color: #FF6F20;
+    font-size: 1.5rem;
     font-weight: 700;
-    color: #ff6f20;
+    margin-bottom: 10px;
   }
   
-  /* Products Grid */
-  .product-grid, .features-grid {
+  .product-content p {
+    color: #333333;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  .product-image-carousel {
+    width: 35%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+  }
+  
+  .carousel-inner {
+    display: flex;
+    width: 100%;
+  }
+  
+  .carousel-inner img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4/3; /* Maintains consistent image proportions */
+    object-fit: cover;
+    display: block;
+  }
+  
+  .carousel-prev,
+  .carousel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    transition: background-color 0.3s ease;
+  }
+  
+  .carousel-prev {
+    left: 10px;
+  }
+  
+  .carousel-next {
+    right: 10px;
+  }
+  
+  .carousel-prev:hover,
+  .carousel-next:hover {
+    background: rgba(0, 0, 0, 0.8);
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .product-image-carousel {
+      width: 100%;
+      margin-top: 20px;
+    }
+  }
+
+   /* features Grid */
+  .features-grid {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 20px;
   }
   
-  .product, .feature {
+  .feature {
     background: #fff;
-    padding: 20px;
+    padding: 10px;
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     width: 30%;
@@ -150,88 +266,134 @@ html {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   
-  .product:hover, .feature:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  .feature:hover {
+    background-color: #9ca3af;
   }
-  
-  .product h3, .feature h3 {
+ 
+  .feature-1:hover {
+    background: url('Assets/1.png');
+    background-size: cover;
+    background-position: center;
+ }
+
+ .feature-2:hover {
+    background-image: url('Assets/2.png'), linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+    background-size: cover;
+    background-position: center;
+ }
+
+ .feature-3:hover {
+    background-image: url('Assets/3.png'), linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+    background-size: cover;
+    background-position: center;
+ }
+
+ .feature-4:hover {
+    background-image: url('Assets/4.png'), linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+    background-size: cover;
+    background-position: center;
+ }
+
+ .feature-5:hover {
+    background-image: url('Assets/5.png'), linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+    background-size: cover;
+    background-position: center;
+ }
+
+ .feature-6:hover {
+    background-image: url('Assets/6.png'), linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+    background-size: cover;
+    background-position: center;
+ }
+
+ .feature p {
+  font-weight:300;
+ }
+  .feature p:hover {
+    color:#ff5900;
+    font-weight:500;
+   
+  }
+   .feature h3 {
     font-weight: 700;
     color: #ff6f20;
   }
   
+  
   /* Contact Form */
   .contact-form-wrapper {
-    max-width: 600px;
+    max-width: 450px;
     margin: 0 auto;
-    padding: 2rem;
-    background: #ffffff;
+    padding: 1.5rem;
+    background: #fff;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .modern-form {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.modern-form {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
-  }
-  
-  .form-group {
+    gap: 1rem;
+}
+
+.form-group {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
-  }
-  
-  .modern-form label {
-    font-weight: 500;
-    color: #374151;
-    font-size: 0.95rem;
-  }
-  
-  .modern-form input,
-  .modern-form textarea {
-    padding: 0.75rem 1rem;
-    border: 1px solid #e5e7eb;
+    gap: 0.3rem;
+}
+
+.modern-form label {
+    font-weight: 600;
+    color: #333;
+    font-size: 0.9rem;
+}
+
+.modern-form input,
+.modern-form textarea {
+    padding: 0.6rem 0.9rem;
+    border: 1px solid #ddd;
     border-radius: 6px;
-    font-size: 1rem;
+    font-size: 0.9rem;
     transition: border-color 0.2s ease;
-    background: #f9fafb;
-  }
-  
-  .modern-form input:focus,
-  .modern-form textarea:focus {
+    background: #fafafa;
+}
+
+.modern-form input:focus,
+.modern-form textarea:focus {
     outline: none;
-    border-color: #4f46e5;
-    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
-    background: #ffffff;
-  }
-  
-  .modern-form input::placeholder,
-  .modern-form textarea::placeholder {
-    color: #9ca3af;
-  }
-  
-  .submit-btn {
-    background-color: #4f46e5;
+    border-color: #ff6f20;
+    box-shadow: 0 0 0 3px rgba(255, 111, 32, 0.1);
+    background: #fff;
+}
+
+.submit-btn {
+    background-color: #ff6f20;
     color: white;
-    padding: 0.875rem 1.5rem;
+    padding: 0.75rem 1.25rem;
     border: none;
     border-radius: 6px;
-    font-weight: 500;
-    font-size: 1rem;
+    font-weight: 600;
+    font-size: 0.9rem;
     cursor: pointer;
-    transition: background-color 0.2s ease;
-    margin-top: 0.5rem;
-  }
-  
-  .submit-btn:hover {
-    background-color: #4338ca;
-  }
-  
-  .submit-btn:active {
-    transform: translateY(1px);
-  }
-  
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.submit-btn:hover {
+    background-color: #e65c10;
+}
+
+.submit-btn:active {
+    transform: translateY(2px);
+}
+
+@media (max-width: 640px) {
+    .contact-form-wrapper {
+        max-width: 90%;
+        padding: 1.2rem;
+    }
+}
+
   /* Footer */
   footer {
     background: #333;
@@ -255,7 +417,12 @@ html {
       margin: 10px 0;
     }
   
-    .product, .feature, .vision, .mission {
+    .product-item {
+      flex-direction: column;
+    }
+  
+    .product-content,
+    .product-image-carousel {
       width: 100%;
     }
   
@@ -266,10 +433,6 @@ html {
     .section h2 {
       font-size: 2rem;
     }
-  
-    form {
-      padding: 0 10px;
-    }
   }
   
   @media (max-width: 480px) {
@@ -277,7 +440,7 @@ html {
       height: 30px;
     }
   
-    #hero h2 {
+    #hero h1 {
       font-size: 2rem;
     }
   
@@ -285,11 +448,362 @@ html {
       font-size: 1.8rem;
     }
   
-    .product h3, .feature h3 {
+    .product-content h3 {
       font-size: 1.2rem;
     }
   
-    .product p, .feature p {
+    .product-content p {
       font-size: 0.9rem;
     }
   }
+  @media (max-width: 992px) {
+    .logo {
+      height: 60px;
+      max-width: 400px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .logo {
+      height: 50px;
+      max-width: 300px;
+    }
+    
+    .vision-container, .mission-container {
+      width: 100%;
+    }
+    
+    .vision-mission-grid {
+      flex-direction: column;
+    }
+    
+    nav ul li {
+      margin: 8px 0;
+    }
+    
+    .brochure-btn {
+      margin-top: 10px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .product-image-carousel {
+      width: 100%;
+      margin-top: 20px;
+    }
+  }
+
+  /* Device-specific breakpoints */
+/* iPhone 14, 14 Pro, 14 Pro Max */
+@media screen and (min-width: 390px) and (max-width: 428px) {
+  .container {
+    width: 95%;
+    padding: 0 10px;
+  }
+
+  header {
+    padding: 10px 0;
+  }
+
+  .logo {
+    height: 40px;
+    max-width: 200px;
+  }
+
+  nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    width: 80%;
+    background: white;
+    transition: 0.3s;
+    padding: 80px 20px;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+  }
+
+  nav.active {
+    right: 0;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  #hero h1 {
+    font-size: 2.5rem;
+  }
+
+  #hero p {
+    font-size: 1.2rem;
+  }
+
+  .product-item {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  .product-content {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .features-grid {
+    gap: 15px;
+  }
+
+  .feature {
+    width: 100%;
+  }
+}
+
+/* Samsung Galaxy (larger Android devices) */
+@media screen and (min-width: 360px) and (max-width: 389px) {
+  .container {
+    width: 95%;
+  }
+
+  .logo {
+    height: 35px;
+    max-width: 180px;
+  }
+
+  #hero h1 {
+    font-size: 2.3rem;
+  }
+}
+
+/* iPad and Tablets */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .container {
+    width: 90%;
+  }
+
+  .logo {
+    height: 50px;
+    max-width: 300px;
+  }
+
+  nav ul {
+    gap: 15px;
+  }
+
+  .product-item {
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  .product-content {
+    width: 55%;
+  }
+
+  .product-image-carousel {
+    width: 45%;
+  }
+
+  .features-grid {
+    gap: 20px;
+  }
+
+  .feature {
+    width: 45%;
+  }
+
+  .vision-mission-grid {
+    flex-direction: row;
+    gap: 20px;
+  }
+}
+
+/* 13-15 inch Laptops */
+@media screen and (min-width: 1025px) and (max-width: 1440px) {
+  .container {
+    max-width: 1200px;
+    width: 85%;
+  }
+
+  .logo {
+    height: 60px;
+    max-width: 400px;
+  }
+
+  nav ul {
+    gap: 25px;
+  }
+
+  .product-item {
+    padding: 30px;
+  }
+
+  .features-grid {
+    gap: 30px;
+  }
+
+  .feature {
+    width: 30%;
+  }
+}
+
+/* High-res Displays (MacBook Pro, etc) */
+@media screen and (min-width: 1441px) {
+  .container {
+    max-width: 1400px;
+  }
+
+  .logo {
+    height: 70px;
+    max-width: 535px;
+  }
+
+  #hero h1 {
+    font-size: 4.5rem;
+  }
+
+  .product-item {
+    padding: 40px;
+  }
+}
+
+/* Common improvements for touch devices */
+@media (hover: none) {
+  nav ul li a,
+  .btn,
+  .feature,
+  .submit-btn {
+    padding: 12px 20px; /* Larger touch targets */
+  }
+
+  .carousel-prev,
+  .carousel-next {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+/* Ensure proper form display on mobile */
+@media screen and (max-width: 428px) {
+  .contact-form-wrapper {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .modern-form input,
+  .modern-form textarea {
+    padding: 12px;
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+
+  .submit-btn {
+    padding: 15px;
+    width: 100%;
+  }
+}
+
+/* Handle landscape orientation */
+@media screen and (max-height: 428px) and (orientation: landscape) {
+  #hero {
+    padding: 40px 0;
+  }
+
+  nav {
+    overflow-y: auto;
+  }
+}
+
+/* Add smooth scrolling for all devices */
+html {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+}
+/* Add to your existing CSS */
+.hamburger-menu {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+  z-index: 1001;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+}
+
+.hamburger-menu span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #333;
+  transition: all 0.3s ease-in-out;
+}
+
+.hamburger-menu.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger-menu.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-menu.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* Mobile and Tablet Navigation Styles */
+@media screen and (max-width: 1024px) {
+  .hamburger-menu {
+    display: flex;
+  }
+
+  nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    width: 80%;
+    max-width: 400px;
+    background: white;
+    padding: 80px 20px;
+    transition: 0.3s ease-in-out;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+    z-index: 1000;
+  }
+
+  nav.active {
+    right: 0;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  nav ul li {
+    margin: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  nav ul li a {
+    display: block;
+    padding: 10px;
+    font-size: 18px;
+  }
+
+  .overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+  }
+
+  .overlay.active {
+    display: block;
+  }
+}
